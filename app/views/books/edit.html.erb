@@ -1,0 +1,19 @@
+<p id="notice">
+<%= notice %></p>
+
+<h1>Editing Book</h1>
+<div><%= render 'layouts/error_messages', model: @book %></div>
+<%= form_with model:@book, url:"/books/#{@book.id}", local:true do |f| %>
+<strong>title</strong></br>
+ <%= f.text_field :title %></br>
+
+<strong>body</strong></br>
+ <%= f.text_area :body %></br>
+ <%= f.submit 'Update Book' %>
+<% end %>
+
+<p>
+ <%= link_to "Show", @book %>
+|
+<a class="back" href="/books">Back</a>
+</p>
